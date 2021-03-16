@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     settings = dict()
     settings['compiler'] = 'clang'
-    settings['compiler.version'] = '5.0'
+    settings['compiler.version'] = '11.0'
     settings['compiler.libcxx'] = 'libc++'
     settings['arch_build'] = 'x86_64'
     settings['arch'] = 'x86'

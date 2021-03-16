@@ -89,7 +89,6 @@ class EmSDKInstallerConan(ConanFile):
                               "set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)",
                               "set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE BOTH)")
 
-
     def _define_tool_var(self, name, value):
         suffix = '.bat' if os.name == 'nt' else ''
         path = os.path.join(self.package_folder, 'upstream', 'emscripten', '%s%s' % (value, suffix))

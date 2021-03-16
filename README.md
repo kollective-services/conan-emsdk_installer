@@ -32,21 +32,20 @@ Note: It is recommended that you run conan install from a build directory and no
 
 The example below shows the commands used to publish to bincrafters conan repository. To publish to your own conan respository (for example, after forking this git repository), you will need to change the commands below accordingly.
 
+# Kollective Updates
 ## Build and package
 
 The following command both runs all the steps of the conan file, and publishes the package to the local system cache.  This includes downloading dependencies from "build_requires" and "requires" , and then running the build() method.
 
-    $ conan create bincrafters/testing
-
-
+    $ conan create . emsdk_installer/2.0.15@
 
 ## Add Remote
 
-    $ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
+    $ conan remote add bincrafters <kollective artifactory>
 
 ## Upload
 
-    $ conan upload emsdk_installer/1.39.6@bincrafters/testing --all -r bincrafters
+    $ conan upload emsdk_installer/1.39.6@kollective/testing --all -r bincrafters
 
 
 ## Conan Recipe License
