@@ -12,8 +12,7 @@ class EmSDKInstallerConan(ConanFile):
 
     settings = {
         "os_build": ['Windows', 'Linux', 'Macos'],
-        "arch_build": ['x86_64'],
-        "arch": ['x86_64']
+        "arch_build": ['x86_64']
     }
     short_paths = True
     requires = "nodejs/12.14.1@#8f9a211b621d5c38202f715a857430f9"
