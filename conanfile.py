@@ -16,7 +16,7 @@ class EmSDKInstallerConan(ConanFile):
         "arch": ['x86_64']
     }
     short_paths = True
-    requires = "nodejs/12.14.1"
+    requires = "nodejs/12.14.1@#8f9a211b621d5c38202f715a857430f9"
     _source_subfolder = "source_subfolder"
 
     def source(self):
