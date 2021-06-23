@@ -15,7 +15,15 @@ class EmSDKInstallerConan(ConanFile):
         "arch_build": ['x86_64']
     }
     short_paths = True
-    requires = "nodejs/12.14.1@#8f9a211b621d5c38202f715a857430f9"
+    # Changes in the nodejs conan receipe broke the sdk build.
+    # Referencing to the specific revision here does not work probably due to other 3rd parties
+    # so the original nodejs revision (8f9a211b621d5c38202f715a857430f9) was duplicated into
+    # the kollective/stable conan repository and here we directly reference to it.
+    # (Probably should create a kollective/3rdparty and move it eventually.)
+    # Commands to duplicate the nodejs package:
+    # conan copy nodejs/12.14.1@ kollective/stable --all
+    # conan upload nodejs/12.14.1@kollective/stable --all -r kollective
+    requires = "nodejs/12.14.1@kollective/stable"
     _source_subfolder = "source_subfolder"
 
     def source(self):
